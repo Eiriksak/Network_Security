@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!------ Include the above in your HEAD tag ---------->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+   
+    <!-- Navigation -->
+    <div class="fixed-top">
+      <header class="topbar">
+          <div class="container">
+            <div class="row">
+              <!-- social icon-->
+              <div class="col-sm-12">
+                <ul class="social-network">
+
+                </ul>
+              </div>
+    
+            </div>
+          </div>
+      </header>
+      <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+        <div class="container">
+          <a class="navbar-brand" rel="nofollow" target="_blank" href="#" style="text-transform: uppercase; font-size: 2rem;"> CRYPTOBANK.COM</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+    
+            <ul class="navbar-nav ml-auto">
+    
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Transfer Money
+                    <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+<div class="container" style="margin-top: 160px">
+    <form action="{{ url_for('sign') }}" method="post">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">First name</label>
+            <input name="firstname" type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Eirik" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Last name</label>
+            <input name="lastname" type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Sakariassen" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">Username</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+              </div>
+              <input name="username" type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" 
+              value="EirikSak" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault03">Description</label>
+            <input name="description" type="text" class="form-control" id="validationDefault03" placeholder="Add extra description for this transaction" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Amount</label>
+            <input name="amount" type="text" class="form-control" id="validationDefault04" placeholder="Amount in NOK" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to sign and transfer this transaction
+            </label>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign transaction</button>
+      </form>
+</div>
+
+
+</body>
+</html>
